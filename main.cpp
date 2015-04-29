@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     
     QString szLocale = QLocale::system().name();
+    //szLocale = "zh_CN";
     QString szTranslationFile = ":/translatioins/app_" + szLocale + ".qm";
     //本地化程序资源 
     QTranslator myappTranslator;
