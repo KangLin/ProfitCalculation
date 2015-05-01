@@ -17,21 +17,29 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_lePurchase_editingFinished()
 {
-    double dbFee = ui->dbFeeRate->value();
+    double dbFeeRate = ui->dbFeeRate->value();
     double dbPurchase = ui->lePurchase->text().toDouble();
     double dbCount = ui->dbCount->text().toDouble();
-    double dbPurchaseFee = CProfiltCalculation::FeeCalculation(dbPurchase, dbFee) * dbCount;
+    double dbPurchaseFee = CProfiltCalculation::FeeCalculation(dbPurchase, dbFeeRate) * dbCount;
     ui->lePurchaseFee->setText(QString::number(dbPurchaseFee));
+    double dbMarginRate = ui->dbMarginRate->value();
+    double dbMargin = dbMarginRate * dbPurchase * dbCount;
+    ui->lePurchasMargin->setText(QString::number(dbMargin));
     ProfilteCalculation();
 }
 
 void MainWindow::on_leSelling_editingFinished()
 {
-    double dbFee = ui->dbFeeRate->value();
+    double dbFeeRate = ui->dbFeeRate->value();
     double dbSelling = ui->leSelling->text().toDouble();
     double dbCount = ui->dbCount->text().toDouble();
-    double dbSellingFee = CProfiltCalculation::FeeCalculation(dbSelling, dbFee) * dbCount;
+    double dbSellingFee = CProfiltCalculation::FeeCalculation(dbSelling, dbFeeRate) * dbCount;
     ui->leSellingFee->setText(QString::number(dbSellingFee));
+
+    double dbMarginRate = ui->dbMarginRate->value();
+    double dbMargin = dbMarginRate * dbSelling * dbCount;
+    ui->leSellingMargin->setText(QString::number(dbMargin));
+
     ProfilteCalculation();
 }
 
@@ -58,12 +66,16 @@ int MainWindow::ProfilteCalculation()
 
 void MainWindow::on_leShort_Selling_editingFinished()
 {
-    double dbFee = ui->dbFeeRate->value();
+    double dbFeeRate = ui->dbFeeRate->value();
     double dbSelling = ui->leShort_Selling->text().toDouble();
     double dbCount = ui->dbCount->text().toDouble();
-    double dbSellingFee = CProfiltCalculation::FeeCalculation(dbSelling, dbFee) * dbCount;
-
+    double dbSellingFee = CProfiltCalculation::FeeCalculation(dbSelling, dbFeeRate) * dbCount;
     ui->leShorts_SellingFee->setText(QString::number(dbSellingFee));
+
+    double dbMarginRate = ui->dbMarginRate->value();
+    double dbMargin = dbMarginRate * dbSelling * dbCount;
+    ui->leShorts_SellingMargin->setText(QString::number(dbMargin));
+
     ShortProfilteCalculation();
 }
 
@@ -87,6 +99,11 @@ int MainWindow::ShortProfilteCalculation()
     double dbProfilt = ui->leShorts_Profilt->text().toDouble() / dbCount; //每手获得  
     double dbPurchase = CProfiltCalculation::ShortsProfiltCalculation(dbSelling, dbProfilt, dbFee);
     ui->leShorts_Purchase->setText(QString::number(dbPurchase));
+
+    double dbMarginRate = ui->dbMarginRate->value();
+    double dbMargin = dbMarginRate * dbPurchase * dbCount;
+    ui->leShorts_PurchaseMargin->setText(QString::number(dbMargin));
+    
     double dbProfiltFee = CProfiltCalculation::FeeCalculation(dbSelling + dbPurchase, dbFee) * dbCount;
     ui->leShorts_ProfiltFee->setText(QString::number(dbProfiltFee));
 
@@ -118,6 +135,11 @@ void MainWindow::on_leLong_Purchase_editingFinished()
     double dbCount = ui->dbCount->text().toDouble();
     double dbPurchaseFee = CProfiltCalculation::FeeCalculation(dbPurchase, dbFee) * dbCount;
     ui->leLong_PurchaseFee->setText(QString::number(dbPurchaseFee));
+
+    double dbMarginRate = ui->dbMarginRate->value();
+    double dbMargin = dbMarginRate * dbPurchase * dbCount;
+    ui->leLong_PurchaseMargin->setText(QString::number(dbMargin));
+
     LongProfilteCalculation();
 }
 
@@ -141,6 +163,11 @@ int MainWindow::LongProfilteCalculation()
     double dbProfilt = ui->leLong_Profilt->text().toDouble() / dbCount; //每手获得  
     double dbSelling = CProfiltCalculation::LongProfilteCalculation(dbPurchase, dbProfilt, dbFee);
     ui->leLong_Selling->setText(QString::number(dbSelling));
+
+    double dbMarginRate = ui->dbMarginRate->value();
+    double dbMargin = dbMarginRate * dbSelling * dbCount;
+    ui->leLong_SellingMargin->setText(QString::number(dbMargin));
+
     double dbProfiltFee = CProfiltCalculation::FeeCalculation(dbSelling + dbPurchase, dbFee) * dbCount;
     ui->leLong_ProfiltFee->setText(QString::number(dbProfiltFee));
 
