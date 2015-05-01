@@ -22,7 +22,8 @@ FORMS    += mainwindow.ui
 
 TRANSLATIONS = app_zh_CN.ts 
 
-OTHER_FILES= app_zh_CN.ts 
-
 RESOURCES += \
     profiltcalculation.qrc
+
+OTHER_FILES= app_zh_CN.ts \
+    README.md
