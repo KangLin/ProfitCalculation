@@ -9,16 +9,11 @@ CProfiltCalculation::~CProfiltCalculation()
     
 }
 
-//计算赢利
+//计算赢利  
 double CProfiltCalculation::ProfiltCalculation(double dbSelling, double dbPurchase, double dbFeeRate)
 {
     //return dbSelling * (1 - dbFeeRate) - dbPurchase * (1 + dbFeeRate);
     return dbSelling - dbPurchase - dbFeeRate * (dbSelling + dbPurchase);
-}
-
-double CProfiltCalculation::MinProfilePrice(double dbPurchase, double dbFeeRate)
-{
-    
 }
 
 double CProfiltCalculation::FeeCalculation(double dbPrice, double dbFeeRate)

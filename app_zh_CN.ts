@@ -87,5 +87,33 @@
         <source>Long profit:</source>
         <translation>空头赢利：</translation>
     </message>
+    <message>
+        <location filename="mainwindow.ui" line="484"/>
+        <source>Unit transform</source>
+        <translation>单位转换</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="492"/>
+        <source>Exchange rate</source>
+        <translation>汇率：</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="528"/>
+        <location filename="mainwindow.ui" line="584"/>
+        <source>Dollar/Ounce</source>
+        <translation>美元/盎司</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="535"/>
+        <location filename="mainwindow.ui" line="570"/>
+        <source>=</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="549"/>
+        <location filename="mainwindow.ui" line="563"/>
+        <source>Yuan/gram</source>
+        <translation>元/克</translation>
+    </message>
 </context>
 </TS>

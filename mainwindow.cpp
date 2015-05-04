@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ProfiltCalculation.h"
-#include <QDebug>
+#include "UnitTransform.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -160,4 +160,20 @@ int MainWindow::LongProfilteCalculation()
     ui->leLong_ProfiltFee->setText(QString::number(dbProfiltFee));
 
     return 0;
+}
+
+void MainWindow::on_leInputDollar_editingFinished()
+{
+    double dbRate = ui->dbExchangRate->value();
+    double dbDollar = ui->leInputDollar->text().toDouble();
+    double outputYuan = CUnitTransform::DollarToYuan(dbDollar, dbRate);
+    ui->leOutputYuan->setText(QString::number(outputYuan));
+}
+
+void MainWindow::on_leInputYuan_editingFinished()
+{
+    double dbRate = ui->dbExchangRate->value();
+    double dbYuan = ui->leInputYuan->text().toDouble();
+    double outputDollar = CUnitTransform::YuanToDollar(dbYuan, dbRate);
+    ui->leOutputDollar->setText(QString::number(outputDollar));
 }

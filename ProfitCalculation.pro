@@ -13,10 +13,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    ProfiltCalculation.cpp
+    ProfiltCalculation.cpp \
+    UnitTransform.cpp
 
 HEADERS  += mainwindow.h \
-    ProfiltCalculation.h
+    ProfiltCalculation.h \
+    UnitTransform.h
 
 FORMS    += mainwindow.ui
 

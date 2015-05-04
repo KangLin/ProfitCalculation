@@ -23,6 +23,10 @@ private slots:
     void on_leLong_Profilt_editingFinished();
     void on_leLong_Purchase_editingFinished();
 
+    void on_leInputDollar_editingFinished();
+    
+    void on_leInputYuan_editingFinished();
+    
 private:
     int ProfilteCalculation();
     int ShortProfilteCalculation();
