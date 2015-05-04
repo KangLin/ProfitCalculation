@@ -30,9 +30,6 @@ RESOURCES += \
 #应用程序图标
 RC_FILE = AppIcon.rc
 
-OTHER_FILES= app_zh_CN.ts \
-    README.md
-
 #rules to generate ts
 isEmpty(QMAKE_LUPDATE) {
     win32: QMAKE_LUPDATE = $$[QT_INSTALL_BINS]/lupdate.exe
@@ -59,3 +56,9 @@ updateqm.output = ${QMAKE_FILE_PATH}/${QMAKE_FILE_BASE}.qm
 updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm ${QMAKE_FILE_OUT}
 updateqm.CONFIG += no_link  no_clean target_predeps 
 QMAKE_EXTRA_COMPILERS += updateqm
+
+OTHER_FILES= app_zh_CN.ts \
+    README.md
+
+DISTFILES += \
+    README_zh_CN.md
