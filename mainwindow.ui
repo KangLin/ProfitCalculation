@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>541</width>
-    <height>522</height>
+    <height>555</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Profilt Calculation</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="profiltcalculation.qrc">
+    <normaloff>:/icon/AppIcon.ico</normaloff>:/icon/AppIcon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_5">
@@ -621,6 +625,8 @@
   <tabstop>leSellingFee</tabstop>
   <tabstop>lePurchaseFee</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="profiltcalculation.qrc"/>
+ </resources>
  <connections/>
 </ui>

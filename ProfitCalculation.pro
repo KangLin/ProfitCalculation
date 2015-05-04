@@ -27,6 +27,9 @@ TRANSLATIONS = app_zh_CN.ts
 RESOURCES += \
     profiltcalculation.qrc
 
+#应用程序图标
+RC_FILE = AppIcon.rc
+
 OTHER_FILES= app_zh_CN.ts \
     README.md
 
