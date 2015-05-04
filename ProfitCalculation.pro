@@ -58,7 +58,10 @@ updateqm.CONFIG += no_link  no_clean target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
 
 OTHER_FILES= app_zh_CN.ts \
-    README.md
+    README.md \
+    android/AndroidManifest.xml
 
 DISTFILES += \
     README_zh_CN.md
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android  #ANDROID包的源码目录  
