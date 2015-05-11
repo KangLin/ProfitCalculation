@@ -6,7 +6,7 @@
     <message>
         <location filename="mainwindow.ui" line="14"/>
         <source>Profilt Calculation</source>
-        <translation>赢利计算</translation>
+        <translation>获利计算</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="23"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="mainwindow.ui" line="82"/>
         <source>Profilt Calculation:</source>
-        <translation>赢利计算：</translation>
+        <translation>获利计算：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="90"/>
@@ -69,12 +69,12 @@
         <location filename="mainwindow.ui" line="276"/>
         <location filename="mainwindow.ui" line="405"/>
         <source>Profilt:</source>
-        <translation>赢利：</translation>
+        <translation>获利：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="226"/>
         <source>Shorts profit:</source>
-        <translation>多头赢利：</translation>
+        <translation>空头获利：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="244"/>
@@ -85,7 +85,7 @@
     <message>
         <location filename="mainwindow.ui" line="355"/>
         <source>Long profit:</source>
-        <translation>空头赢利：</translation>
+        <translation>多头获利：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="484"/>
