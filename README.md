@@ -1,7 +1,11 @@
-获利计算器
-==========
+Profit Calculator
+=============
 
-1. 计算手续费
-2. 计算获利
-3. 计算空头获利
-4. 计算多头获利
+Other language：[Chinese](README_zh_CN.md)
+
+1. Calculate fees
+2. Calculate profit
+3. Calculate the short profit
+4. Calculate long profit
+5. dollars / ounce and the yuan / gram conversion
+
