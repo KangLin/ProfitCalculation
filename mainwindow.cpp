@@ -162,6 +162,16 @@ int MainWindow::LongProfilteCalculation()
     return 0;
 }
 
+void MainWindow::on_dbCount_valueChanged(double arg1)
+{
+    on_lePurchase_editingFinished();
+    on_leSelling_editingFinished();
+    on_leShort_Selling_editingFinished();
+    on_leShorts_Profilt_editingFinished();
+    on_leLong_Purchase_editingFinished();
+    on_leLong_Profilt_editingFinished();
+}
+
 void MainWindow::on_leInputDollar_editingFinished()
 {
     double dbRate = ui->dbExchangRate->value();
@@ -177,3 +187,4 @@ void MainWindow::on_leInputYuan_editingFinished()
     double outputDollar = CUnitTransform::YuanToDollar(dbYuan, dbRate);
     ui->leOutputDollar->setText(QString::number(outputDollar));
 }
+

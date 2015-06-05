@@ -27,6 +27,8 @@ private slots:
     
     void on_leInputYuan_editingFinished();
     
+    void on_dbCount_valueChanged(double arg1);
+    
 private:
     int ProfilteCalculation();
     int ShortProfilteCalculation();
