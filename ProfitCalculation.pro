@@ -65,3 +65,26 @@ DISTFILES += \
     README_zh_CN.md
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android  #ANDROID包的源码目录  
+
+#安装
+isEmpty(PREFIX){
+    android{
+       PREFIX=/.
+
+    }
+    else{
+        PREFIX = $$OUT_PWD/$${TARGET}
+    }
+}
+
+win32{
+    #安装qt依赖库
+    Deployment_qtlib.target = Deployment_qtlib
+    Deployment_qtlib.path = $${PREFIX}
+    Deployment_qtlib.commands = "$$[QT_INSTALL_BINS]/windeployqt" \
+                    --verbose 7 \
+                    "$${PREFIX}/$${TARGET}.exe"
+
+    target.path = $$PREFIX
+    INSTALLS += target Deployment_qtlib 
+}
