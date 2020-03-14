@@ -3,11 +3,23 @@
 #include "ProfiltCalculation.h"
 #include "UnitTransform.h"
 
+#include <QSettings>
+#include <QStandardPaths>
+#include <QDir>
+#include <QApplication>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QSettings set(getConfigureFile(), QSettings::IniFormat);
+    double value = set.value("Count", 1).toDouble();
+    ui->dbCount->setValue(value);
+    value = set.value("FeeRate", 0.0008).toDouble();
+    ui->dbFeeRate->setValue(value);
+    value = set.value("MarginRate", 0.11).toDouble();
+    ui->dbMarginRate->setValue(value);
 }
 
 MainWindow::~MainWindow()
@@ -162,14 +174,25 @@ int MainWindow::LongProfilteCalculation()
     return 0;
 }
 
-void MainWindow::on_dbCount_valueChanged(double arg1)
+void MainWindow::on_dbCount_valueChanged(double value)
 {
-    on_lePurchase_editingFinished();
-    on_leSelling_editingFinished();
-    on_leShort_Selling_editingFinished();
-    on_leShorts_Profilt_editingFinished();
-    on_leLong_Purchase_editingFinished();
-    on_leLong_Profilt_editingFinished();
+    QSettings set(getConfigureFile(), QSettings::IniFormat);
+    set.setValue("Count", value);
+    RecalculationAll();
+}
+
+void MainWindow::on_dbFeeRate_valueChanged(double value)
+{
+    QSettings set(getConfigureFile(), QSettings::IniFormat);
+    set.setValue("FeeRate", value);
+    RecalculationAll();
+}
+
+void MainWindow::on_dbMarginRate_valueChanged(double value)
+{
+    QSettings set(getConfigureFile(), QSettings::IniFormat);
+    set.setValue("MarginRate", value);
+    RecalculationAll();
 }
 
 void MainWindow::on_leInputDollar_editingFinished()
@@ -188,3 +211,25 @@ void MainWindow::on_leInputYuan_editingFinished()
     ui->leOutputDollar->setText(QString::number(outputDollar));
 }
 
+int MainWindow::RecalculationAll()
+{
+    on_lePurchase_editingFinished();
+    on_leSelling_editingFinished();
+    on_leShort_Selling_editingFinished();
+    on_leShorts_Profilt_editingFinished();
+    on_leLong_Purchase_editingFinished();
+    on_leLong_Profilt_editingFinished();
+    return 0;
+}
+
+QString MainWindow::getConfigureFile()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)
+            + QDir::separator()
+            + "Rabbit"
+            + QDir::separator()
+            + QApplication::applicationName()
+            + QDir::separator()
+            + QApplication::applicationName()
+            + ".conf";
+}

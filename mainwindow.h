@@ -22,17 +22,18 @@ private slots:
     void on_leShorts_Profilt_editingFinished();
     void on_leLong_Profilt_editingFinished();
     void on_leLong_Purchase_editingFinished();
-
-    void on_leInputDollar_editingFinished();
-    
+    void on_leInputDollar_editingFinished();  
     void on_leInputYuan_editingFinished();
-    
-    void on_dbCount_valueChanged(double arg1);
+    void on_dbCount_valueChanged(double value);
+    void on_dbFeeRate_valueChanged(double value);
+    void on_dbMarginRate_valueChanged(double value);
     
 private:
     int ProfilteCalculation();
     int ShortProfilteCalculation();
     int LongProfilteCalculation();
+    int RecalculationAll();
+    QString getConfigureFile();
 
 private:
     Ui::MainWindow *ui;
