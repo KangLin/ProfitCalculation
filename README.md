@@ -1,7 +1,7 @@
 Profit Calculator
 =============
-Author: Kang Lin <kl222@126.com>
-Project: https://github.com/KangLin/ProfitCalculation
+- Author: Kang Lin <kl222@126.com>
+- Project: https://github.com/KangLin/ProfitCalculation
 
 Other language：[Chinese](README_zh_CN.md)
 
