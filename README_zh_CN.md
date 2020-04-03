@@ -1,5 +1,7 @@
 获利计算器
 ==========
+- 作者: 康林<kl222@126.com>
+- 项目位置: https://github.com/KangLin/ProfitCalculation
 
 其它语言：[英语](README.md)
 
